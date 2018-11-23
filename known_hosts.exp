@@ -1,0 +1,11 @@
+#!/usr/bin/expect
+
+set timeout 60
+set username [lindex $argv 0]
+set hostname [lindex $argv 1]
+spawn ssh $username@$hostname
+expect "yes/no"
+send "yes\r"
+expect eof
+exit
+
